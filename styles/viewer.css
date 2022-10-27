@@ -1,0 +1,722 @@
+:root {
+  --coverHeight: 14rem;
+  --coverMargin: 1rem;
+  --listMargin: 0.4rem;
+  --coverRadius: 0.7rem;
+  --coverPadding: 1rem;
+  --titleSize: 1.4rem;
+  --text-light-color: rgba(255, 255, 255, 0.55);
+  --live-orange: #e7a377;
+  --dark-blue: #034c8c;
+  --middle-blue: #0396a6;
+  --light-blue: #05daf27f;
+  --very-light-transparent-blue: #add8e64f;
+  --dark-gray: #212529;
+  --light-gray: #f2f2f2;
+  --middle-gray: #b3b3b3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  --light-gray: rgb(123, 123, 123);
+  --light-blue: #8dbafff0;
+  --translucent-white: rgba(255, 255, 255, 0.7);
+
+  --normal-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  --blur-filter: blur(8px);
+}
+
+header {
+  color: var(--light-gray);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid gray;
+}
+
+header *:last-child {
+  margin-left: auto;
+  color: var(--light-blue);
+}
+
+h2 {
+  font-size: 1rem;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+p {
+  font-size: 12px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.hide-overflow {
+  overflow: hidden;
+}
+
+.bottom {
+  bottom: 1rem;
+}
+
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.toolbar {
+  display: flex;
+  flex-direction: row;
+}
+
+.toolbar a {
+  margin: 0.5rem;
+}
+
+/* From uiverse.io by @fanishah */
+.card {
+  margin: 1rem;
+  min-width: 10rem;
+  max-width: 20rem;
+  height: 15rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  transition: all 0.15s ease-in;
+  box-shadow: var(--normal-shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card * {
+  margin: 0.5rem 0;
+}
+
+.card svg {
+  fill: var(--light-gray);
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.card .button {
+  padding: 1rem;
+}
+
+.card:hover {
+  transform: translateY(-1.5rem);
+  border: var(--light-blue) 0.1em solid;
+  border-radius: 2.5rem 0 2.5rem 0;
+  cursor: pointer;
+}
+
+.card:hover svg,
+.card:hover h2 {
+  fill: var(--light-blue);
+  color: var(--light-blue);
+}
+
+/* From uiverse.io */
+.button {
+  padding: 0.7rem;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background: var(--translucent-white);
+  backdrop-filter: var(--blur-filter);
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+
+.button:hover {
+  background-color: var(--light-blue);
+  box-shadow: 0px 15px 20px rgba(46, 104, 229, 0.4);
+  color: #fff;
+  fill: #fff;
+  transform: translateY(-7px);
+}
+
+.button:active {
+  transform: translateY(-1px);
+}
+
+.title-card {
+  margin-top: 1rem;
+  width: 80vh;
+  height: 1.75rem;
+  line-height: 1.75rem;
+  border-radius: var(--coverRadius);
+  background: var(--dark-blue);
+  color: var(--translucent-white);
+  box-shadow: var(--normal-shadow);
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+  .title-card {
+    width: 20vh;
+  }
+}
+
+@media (min-width: 1px) and (max-width: 400px) {
+  .title-card {
+    width: 100%;
+    padding: 0 0.5rem;
+  }
+}
+@media (min-width: 401px) and (max-width: 500px) {
+  .title-card {
+    width: 15vh;
+  }
+}
+@media (min-width: 501px) and (max-width: 600px) {
+  .title-card {
+    width: 25vh;
+  }
+}
+@media (min-width: 601px) and (max-width: 800px) {
+  .title-card {
+    width: 35vh;
+  }
+}
+@media (min-width: 801px) and (max-width: 1000px) {
+  .title-card {
+    width: 50vh;
+  }
+}
+@media (min-width: 1001px) and (max-width: 1200px) {
+  .title-card {
+    width: 75vh;
+  }
+}
+@media (min-width: 1201px) {
+  .title-card {
+    width: 90vh;
+  }
+}
+
+.simple-card-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* From uiverse.io by @adamgiebl */
+.simple-card {
+  margin-top: 1rem;
+  width: 100%;
+  height: 1.75rem;
+  line-height: 1.75rem;
+  border-radius: 1rem;
+  background: var(--middle-gray);
+  box-shadow: var(--normal-shadow);
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+}
+
+.treeTable {
+  overflow: auto;
+  max-height: 60vh;
+  width: 100%;
+  border-radius: 1rem;
+  background: var(--translucent-white);
+  box-shadow: var(--normal-shadow);
+  backdrop-filter: var(--blur-filter);
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+}
+
+.properties {
+  position: absolute;
+  z-index: 999999999;
+  border-radius: 1rem;
+  top: 1rem;
+  right: 1rem;
+  background-color: lightgray;
+  width: 30vw;
+  max-height: 80vh;
+  opacity: 0.7;
+  padding: 0.5rem;
+}
+
+.tablinks {
+  margin: 0.5rem;
+  padding: 1rem;
+  overflow-y: auto;
+  max-height: 70vh;
+}
+
+.boxfront {
+  background-color: lightgray;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  height: 4rem;
+  width: 4rem;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.boxleft {
+  background-color: lightgray;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  height: 4rem;
+  width: 4rem;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  transform: rotateY(90deg);
+}
+
+/* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+.active {
+  display: block;
+  /* margin-left: 10px; */
+}
+
+.highlight {
+  background-color: var(--middle-blue);
+  opacity: 1;
+}
+
+.tmphighlight {
+  background-color: var(--middle-blue);
+}
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  max-width: 30vw;
+  max-height: 75vh;
+  overflow-y: auto;
+}
+
+/* collapisble table */
+
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.colactive,
+.collapsible:hover {
+  background-color: lightblue;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.col-content {
+  padding: 1rem;
+  display: none;
+  overflow: hidden;
+}
+
+.container {
+  margin-bottom: 0.5rem;
+}
+
+.viewer-description {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.viewer-description > p {
+  font-size: 14px;
+  margin-top: 1rem;
+  border: 1px solid gainsboro;
+  border-radius: 10px;
+  height: 25px;
+  padding: 0rem 0.5rem;
+  color: var(--light-gray);
+  background-color: var(--translucent-white);
+  box-shadow: var(--normal-shadow);
+}
+
+.viewerSection .bimViewer {
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+  border-radius: var(--coverRadius);
+  border: 1px solid gainsboro;
+  background-color: rgb(238, 238, 238);
+  position: relative;
+}
+
+#model-viewer-container {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  border-radius: var(--coverRadius);
+  padding-left: 1rem;
+  margin: 0px;
+}
+
+.bimViewer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 0.5rem;
+}
+
+.right-menu {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 0px;
+}
+
+.viewer-tools-container,
+.viewer-description-container {
+  width: 100%;
+}
+
+.tools-container {
+  position: relative;
+  border: 1px solid gainsboro;
+  border-radius: 10px;
+  margin-top: 10px;
+  background: white;
+}
+
+.buttons-container {
+  display: flex;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  justify-content: space-evenly;
+}
+
+.tool-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  margin-left: 0.5rem;
+  border-radius: 30px;
+  border: 1px solid #8f9092;
+  transition: all 0.2s ease;
+  color: #606060;
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.tool-button:hover {
+  box-shadow: 0 4px 3px 1px var(--very-light-transparent-blue),
+    0 6px 8px var(--very-light-transparent-blue), 0 -4px 4px #dce0e8,
+    0 -6px 4px var(--very-light-transparent-blue), inset 0 0 3px 3px #cecfd1;
+}
+
+.tool-button:active {
+  box-shadow: 0 4px 3px 1px var(--very-light-transparent-blue),
+    0 6px 8px var(--very-light-transparent-blue), 0 -4px 4px #dce0e8,
+    0 -6px 4px var(--very-light-transparent-blue), inset 0 0 5px 3px #999,
+    inset 0 0 30px #aaa;
+}
+
+.tool-button[title]:hover::after {
+  content: attr(title);
+  padding: 0.2rem 0.5rem;
+  margin-bottom: 4rem;
+  width: 100%;
+  border-radius: var(--coverRadius);
+  width: max-content;
+  background-color: var(--dark-blue);
+  font-size: 12px;
+  white-space: nowrap;
+  color: white;
+}
+
+#fit-view {
+  background-image: url("../asset/icon-fit.png");
+}
+
+#left-view {
+  background-image: url("../asset/icon-left.png");
+}
+
+#front-view {
+  background-image: url("../asset/icon-front.png");
+}
+
+#right-view {
+  background-image: url("../asset/icon-right.png");
+}
+
+#back-view {
+  background-image: url("../asset/icon-back.png");
+}
+
+#wireframe-view {
+  background-image: url("../asset/icon-wireframe.png");
+}
+
+#colored-view {
+  background-image: url("../asset/icon-colored.png");
+}
+
+#deleteMeasurements {
+  background-image: url("../asset/icon-removeMeasurements.png");
+}
+
+#carbon-footprint {
+  background-image: url("../asset/icon-carbonDisabled.png");
+}
+
+.measurementLabel {
+  background-color: #d9d5e7d1;
+  color: var(--darkColor);
+  font-size: 14px;
+  padding: 0 0.5rem;
+  border-radius: 0.5rem;
+}
+
+/* Tree table */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  position: relative;
+}
+
+table th {
+  background: lightgray;
+  position: sticky;
+  top: 0;
+}
+
+table td {
+  border: 1px solid #eee;
+}
+
+.tfoot tr:last-child {
+  text-align: left;
+}
+
+.tfoot tr:last-child {
+  text-align: right;
+}
+
+.level1 td:first-child {
+  padding-left: 15px;
+}
+
+.level2 td:first-child {
+  padding-left: 30px;
+}
+
+.level3 td:first-child {
+  padding-left: 45px;
+}
+
+.level4 td:first-child {
+  padding-left: 60px;
+}
+
+.level5 td:first-child {
+  padding-left: 75px;
+}
+
+.level6 td:first-child {
+  padding-left: 90px;
+}
+
+.level7 td:first-child {
+  padding-left: 105px;
+}
+
+.table-collapse .toggle {
+  width: 0;
+  height: 0;
+  border-left: 0.25rem solid transparent;
+  border-right: 0.25rem solid transparent;
+  border-top: 0.5rem solid var(--dark-blue);
+}
+
+.table-expand .toggle {
+  width: 0;
+  height: 0;
+  border-top: 0.25rem solid transparent;
+  border-left: 0.5rem solid var(--dark-blue);
+  border-bottom: 0.25rem solid transparent;
+}
+
+.toggle {
+  height: 9px;
+  width: 9px;
+  display: inline-block;
+  margin: 0.2rem;
+}
+
+tr:hover {
+  background-color: #d6eeee;
+}
+
+.data-ifc-element {
+  text-align: left;
+  height: 1.3rem;
+}
+
+#boq {
+  width: 100%;
+  font-size: 0.7rem;
+}
+
+tfoot td,
+.dataNumber {
+  text-align: right;
+  padding-right: 0.5rem;
+}
+
+select {
+  width: 5rem;
+  height: 1.2rem;
+}
+
+.quantity-type-container {
+  display: contents;
+}
+
+.grid-enabled {
+  fill: green;
+  color: #034c8c;
+}
+
+.legend-container {
+  visibility: hidden;
+  opacity: 0.8;
+  margin-top: 0.75rem;
+  color: var(--translucent-white);
+  font-weight: 400;
+  font-size: 12px;
+  background-color: var(--middle-blue);
+  border-radius: var(--coverRadius);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 98%;
+  position: absolute;
+  padding: 0.3rem;
+}
+
+.footprint-color-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.footprint-color {
+  width: 30px;
+  height: 90%;
+  margin-right: 1rem;
+  border-radius: 0.3rem;
+}
+
+.sub-header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footprint-simulation {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+  width: max-content;
+  padding: 0 1rem;
+  height: 1.75rem;
+  line-height: 1.75rem;
+  border-radius: var(--coverRadius);
+  background: var(--live-orange);
+  color: var(--dark-gray);
+  box-shadow: 0px 0px 10px rgb(0 0 0 / 80%);
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.simulation-button {
+  width: 22px;
+  height: 22px;
+  margin-right: 0.5rem;
+  border-radius: 30px;
+  border: 1px solid #8f9092;
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("../asset/icon-carbonDisabled.png");
+}
+
+.button-item {
+  display: flex;
+  align-items: center;
+}
