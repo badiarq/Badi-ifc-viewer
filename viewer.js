@@ -668,3 +668,19 @@ footprintSimulationButton.addEventListener("click", function (event) {
   );
 });
 
+// Download File's properties
+downloadPropFile(model);
+
+async function downloadPropFile(model){
+  //const model = await viewer.IFC.loadIfcUel(url);
+  
+  const properties = await viewer.IFC.properties.serializeAllProperties(model);
+  const file = new File(properties, 'properties.json');
+  const link = document.createElement('a');
+  document.body.appendChild(link);
+  link.download = 'properties.json'
+  link.href = URL.createObjectURL(file);
+  link.click();
+  link.remove()
+
+}
